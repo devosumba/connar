@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://connarkenya.org/sitemap.xml
+
+# Disallow access to non-public assets
+Disallow: /scss/
+Disallow: /prepros-6.config

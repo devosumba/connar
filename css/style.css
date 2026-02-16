@@ -1,3 +1,11 @@
+@media (max-width: 575.98px) {
+  .ftco-footer .text-center p {
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+  }
+}
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -8786,13 +8794,15 @@ h1, h2, h3, h4, h5,
           @media (max-width: 991.98px) {
             .owl-carousel.home-slider .slider-item .slider-text .text {
               width: 60%; }
-              .owl-carousel.home-slider .slider-item .slider-text .text h1 {
+              .owl-carousel.home-slider .slider-item .slider-text .text h1,
+              .owl-carousel.home-slider .slider-item .slider-text .text h2.hero-heading {
                 font-size: 30px; } }
           @media (max-width: 767.98px) {
             .owl-carousel.home-slider .slider-item .slider-text .text {
               width: 80%;
               margin-bottom: 4em; }
-              .owl-carousel.home-slider .slider-item .slider-text .text h1 {
+              .owl-carousel.home-slider .slider-item .slider-text .text h1,
+              .owl-carousel.home-slider .slider-item .slider-text .text h2.hero-heading {
                 font-size: 22px;
                 text-transform: capitalize; } }
         .owl-carousel.home-slider .slider-item .slider-text .absolute {
@@ -8856,14 +8866,16 @@ h1, h2, h3, h4, h5,
                 padding-left: 15px;
                 padding-right: 0;
                 font-size: 26px; } }
-        .owl-carousel.home-slider .slider-item .slider-text h1 {
+        .owl-carousel.home-slider .slider-item .slider-text h1,
+        .owl-carousel.home-slider .slider-item .slider-text h2.hero-heading {
           font-size: 40px;
           text-transform: uppercase;
           color: #fff;
           line-height: 1.1;
           font-weight: 900;
           position: relative; }
-          .owl-carousel.home-slider .slider-item .slider-text h1 span {
+          .owl-carousel.home-slider .slider-item .slider-text h1 span,
+          .owl-carousel.home-slider .slider-item .slider-text h2.hero-heading span {
             color: #000000;
             display: block; }
         .owl-carousel.home-slider .slider-item .slider-text h2 {

@@ -115,7 +115,7 @@
 	
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">
+			<a class="navbar-brand" href="/">
 				<img src="images/Navbar_Logo/1.png" alt="Connar Consultants" class="logo-white">
 				<img src="images/Navbar_Logo/2.png" alt="Connar Consultants" class="logo-dark">
 			</a>
@@ -153,7 +153,7 @@
 							<div class="text">
 								<h2 class="mb-4 hero-heading">Evidence-based solutions!</h2>
 								<p>CONNAR curates integrated solutions across nutrition, food systems, climate resilience, and environmental governance.</p>
-								<p class="mb-0"><a href="#" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Explore Our Services</a></p>
+								<p class="mb-0"><a href="#services" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Explore Our Services</a></p>
 							</div>
 						</div>
 					</div>
@@ -173,7 +173,7 @@
 							<div class="text">
 								<h2 class="mb-4 hero-heading">Transforming Food Systems.</h2>
 								<p>From nutrition-sensitive programming to climate risk assessments, we connect research, policy, and implementation to deliver measurable impact.</p>
-								<p class="mb-0"><a href="#!" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Explore Our Services</a></p>
+								<p class="mb-0"><a href="#services" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Explore Our Services</a></p>
 							</div>
 						</div>
 					</div>
@@ -193,7 +193,7 @@
 							<div class="text">
 								<h2 class="mb-4 hero-heading">Practical Solutions, Lasting Impact!</h2>
 								<p>We work collaboratively with communities and partners to deliver research-informed interventions that are inclusive, accountable, and sustainable.</p>
-								<p class="mb-0"><a href="#" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Explore Our Services</a></p>
+								<p class="mb-0"><a href="#services" class="btn btn-primary py-md-3 py-2 px-2 px-md-4">Explore Our Services</a></p>
 							</div>
 						</div>
 					</div>
@@ -285,7 +285,7 @@ Our work is grounded in systems thinking and delivered through collaborative par
 									<div class="desc">
 										<div class="top">
 											
-											<h2 class="mb-2"> Environmental & Social Impact Assessments&nbsp;(ESIA) </a></h2>
+											<h2 class="mb-2"> Environmental & Social Impact Assessments (ESIA) </h2>
 										</div>
 										<div class="absolute">
 											<p>We conduct comprehensive assessments and audits to support regulatory compliance, reduce environmental risk, and enhance project sustainability.</p>
@@ -762,7 +762,7 @@ Our work is grounded in systems thinking and delivered through collaborative par
 			<div class="row mb-5">
 				<div class="col-md">
 					<div class="ftco-footer-widget mb-4">
-						<a href="index.html"><img src="images/Navbar_Logo/1.png" alt="Connar Consultants" style="max-width: 160px; margin-bottom: 15px;"></a>
+						<a href="/"><img src="images/Navbar_Logo/1.png" alt="Connar Consultants" style="max-width: 160px; margin-bottom: 15px;"></a>
 						
 						<p class="footer-socials-label">Follow Us On Our Socials</p>
 						<ul class="ftco-footer-social list-unstyled">
@@ -776,10 +776,10 @@ Our work is grounded in systems thinking and delivered through collaborative par
 					<div class="ftco-footer-widget mb-4">
 						<h3 class="ftco-heading-2">Company</h3>
 						<ul class="list-unstyled">
-							<li><a href="index.html"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Research &amp; Consultancies</a></li>
+							<li><a href="#home"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+							<li><a href="#about"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+							<li><a href="#services"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+							<li><a href="#research"><span class="fa fa-chevron-right mr-2"></span>Research &amp; Consultancies</a></li>
 						</ul>
 					</div>
 				</div>
@@ -834,6 +834,13 @@ Our work is grounded in systems thinking and delivered through collaborative par
 
 			document.querySelectorAll('.staff .img-wrap').forEach(function(wrap) {
 				var card = wrap.closest('.staff');
+
+				// Prevent card toggle from swallowing link clicks
+				wrap.querySelectorAll('a').forEach(function(link) {
+					link.addEventListener('click', function(e) {
+						e.stopPropagation();
+					});
+				});
 
 				wrap.addEventListener('click', function(e) {
 					if (!isMobile()) return;

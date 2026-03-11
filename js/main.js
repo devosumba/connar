@@ -275,3 +275,27 @@
 
 })(jQuery);
 
+// Scroll-based section hash update (no index.html in URL)
+(function() {
+  if (!history.replaceState) return;
+  var sectionIds = ['home', 'about', 'services', 'team', 'research'];
+  var ticking = false;
+
+  function updateHash() {
+    var current = sectionIds[0];
+    sectionIds.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 100) current = id;
+    });
+    history.replaceState(null, null, '#' + current);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(updateHash);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+
